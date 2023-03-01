@@ -1,0 +1,7 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render partial: "history", collection: @applicants, as: :applicant %> 
+
+<div>
+  <%= link_to "Back to applicants", applicants_path %>
+</div>

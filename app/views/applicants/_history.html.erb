@@ -1,0 +1,16 @@
+
+ <p> Status History for: <strong><%= @applicant.name %></strong> 
+
+    <% unless applicant.try(:event) && applicant.event == "create" %>
+    <p>
+      <strong>Status:</strong>
+      <%= applicant.try(:reify) ? applicant.reify.status.titleize : applicant.status.titleize %>
+    </p>
+    
+    <p>
+      <strong>Comment:</strong>
+      <%= applicant.try(:reify) ? applicant.reify.comment : applicant.comment %>
+    </p>
+    <hr>
+    <% end %>
+  

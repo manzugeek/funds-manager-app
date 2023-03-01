@@ -1,0 +1,33 @@
+<h1>Payments</h1>
+
+<%
+  dates = projects_paid_dates
+%>
+
+<table id="payments">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Project</th>
+      <th>Payments due</th>
+    </tr>
+  </thead>
+  <tbody>
+  <%  
+    dates_sorted.each do |date|
+  %>
+    <% dates[date].each do |project| %>
+      <tr>
+        <td><%= date %></td>
+        <td><%= project %></td>
+        <td>
+          <%=
+            applicants = approved_applicants
+            applicants.map(&:name).join(', ')
+           %>
+        </td>
+      </tr>
+    <% end %>
+  <% end %>
+  </tbody>
+</table>
